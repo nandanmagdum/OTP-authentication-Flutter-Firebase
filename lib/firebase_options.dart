@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,38 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBSkKh1lEG9Ca6CFWv_TGBI387F4hT1Wg0',
-    appId: '1:5418053022:web:c4182fab13e63b3c567a8f',
-    messagingSenderId: '5418053022',
-    projectId: 'pratice-project-1403',
-    authDomain: 'pratice-project-1403.firebaseapp.com',
-    storageBucket: 'pratice-project-1403.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyA2P5iZxKLgpwdLQ_4SSYVES3fy-SFDTgE',
     appId: '1:5418053022:android:a34698830efdfda8567a8f',
     messagingSenderId: '5418053022',
     projectId: 'pratice-project-1403',
     storageBucket: 'pratice-project-1403.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDTeXqClP9qPCRK4Jd486eeJ9IwRJP2noA',
-    appId: '1:5418053022:ios:d927cc58071b10d4567a8f',
-    messagingSenderId: '5418053022',
-    projectId: 'pratice-project-1403',
-    storageBucket: 'pratice-project-1403.appspot.com',
-    iosBundleId: 'com.example.otpAuth',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDTeXqClP9qPCRK4Jd486eeJ9IwRJP2noA',
-    appId: '1:5418053022:ios:134a9298b16182dc567a8f',
-    messagingSenderId: '5418053022',
-    projectId: 'pratice-project-1403',
-    storageBucket: 'pratice-project-1403.appspot.com',
-    iosBundleId: 'com.example.otpAuth.RunnerTests',
   );
 }

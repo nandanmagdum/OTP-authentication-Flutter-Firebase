@@ -66,17 +66,20 @@ class _GetDetailsState extends State<GetDetails> {
                         phoneNumber: widget.phoneNumber,
                         isSignUp: true,
                         type: "SignUp",
-                        userdata: [name.text, email.text, widget.phoneNumber]
-                    );
+                        userdata: [name.text, email.text, widget.phoneNumber]);
                     setState(() {
                       isLoading = false;
                     });
                   },
                   child: Container(
-                  padding: EdgeInsets.all(20),
-                  width: Get.width,
-                  height: Get.height*0.08,
-                  child: (isLoading) ? Center(child: CircularProgressIndicator(),): Text("Get OTP"))),
+                      padding: EdgeInsets.all(20),
+                      width: Get.width,
+                      height: Get.height * 0.08,
+                      child: (isLoading)
+                          ? Center(
+                              child: CircularProgressIndicator(),
+                            )
+                          : Text("Get OTP"))),
             ],
           ),
         ),
